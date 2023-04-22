@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:schedule/globals.dart';
 
 class MainDrawer extends StatefulWidget {
   const MainDrawer({Key? key}) : super(key: key);
@@ -22,14 +23,30 @@ class _MainDrawerState extends State<MainDrawer> {
           ),
         ),
         child: Column(
-          children: const [
-            ListTile(
-              title: Text("Исходный учебный план",
-                  style: TextStyle(color: Colors.white, fontSize: 15)),
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                color: page == 0 ? Colors.transparent.withOpacity(0.2) : Colors.transparent,
+                borderRadius: BorderRadius.only(topRight: Radius.circular(50))
+              ),
+              padding: EdgeInsets.only(left: 20),
+              height: 100,
+              alignment: Alignment.centerLeft,
+              child: const Text("Учебный план", style: TextStyle(color: Colors.white, fontSize: 15)),
             ),
-            ListTile(
-              title: Text("Календарно-тематический план",
-                  style: TextStyle(color: Colors.white, fontSize: 15)),
+            Container(
+              height: 100,
+              padding: EdgeInsets.only(left: 20),
+              color: page == 1 ? Colors.transparent.withOpacity(0.2) : Colors.transparent,
+              alignment: Alignment.centerLeft,
+              child: Text("Календарно-тематический план", style: TextStyle(color: Colors.white, fontSize: 15)),
+            ),
+            Container(
+              padding: EdgeInsets.only(left: 20),
+              height: 100,
+              color: page == 2 ? Colors.transparent.withOpacity(0.2) : Colors.transparent,
+              alignment: Alignment.centerLeft,
+              child: Text("Загруженные файлы", style: TextStyle(color: Colors.white, fontSize: 15)),
             ),
           ],
         ),
