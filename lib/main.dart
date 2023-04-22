@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:mysql1/mysql1.dart';
 import 'package:schedule/drawer.dart';
 
 import 'appBar.dart';
 
-void main() {
+void main() async {
+  var settings = ConnectionSettings(
+      host: 'server16.hosting.reg.ru',
+      port: 3306,
+      user: 'u2030942_default',
+      password: 'htc4CghG7GFz548H',
+      db: 'u2030942_xacaton2023'
+  );
+  var conn = await MySqlConnection.connect(settings);
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -55,7 +65,6 @@ class DropdownButton extends StatelessWidget {
                   filled: true,
                   fillColor: Colors.white,
                 ),
-                validator: (value) => value == null ? "Select a country" : null,
                 dropdownColor: Colors.white,
                 value: selectedValue,
                 onChanged: (String? newValue) {},
