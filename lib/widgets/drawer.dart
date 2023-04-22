@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MainDrawer extends StatefulWidget {
@@ -11,22 +12,33 @@ class _MainDrawerState extends State<MainDrawer> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      width: 400,
       child: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(
-                'assets/images/back.png'),
+            image: AssetImage('assets/images/back.png'),
             fit: BoxFit.fill,
           ),
         ),
         child: Column(
           children: [
-            DropdownButton(),
-            const ListTile(
-              title: Text("Исходный учебный план"),
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Divider(
+                color: Colors.white,
+                height: 1,
+                thickness: 2,
+                indent: 5,
+                endIndent: 5,
+              ),
             ),
-            const ListTile(
-              title: Text("ктп", style: TextStyle(color: Colors.white)) ,
+            ListTile(
+              title: Text("Исходный учебный план",
+                  style: TextStyle(color: Colors.white, fontSize: 15)),
+            ),
+            ListTile(
+              title: Text("Календарно-тематический план",
+                  style: TextStyle(color: Colors.white, fontSize: 15)),
             ),
           ],
         ),
@@ -51,16 +63,16 @@ class DropdownButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             DropdownButtonFormField(
-              hint: const Text('1 занятие'),
+              hint: Text('1 занятие'),
                 iconSize: 0.0,
                 decoration: InputDecoration(
-                  prefixIcon: const Icon(Icons.arrow_drop_down_sharp, size: 40, color: Color(0xFF23E091),),
+                  prefixIcon: Icon(Icons.arrow_drop_down_sharp, size: 40, color: Color(0xFF23E091),),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.white, width: 2),
+                    borderSide: BorderSide(color: Colors.white, width: 2),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   border: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.white, width: 2),
+                    borderSide: BorderSide(color: Colors.white, width: 2),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   filled: true,
@@ -81,8 +93,8 @@ class DropdownButton extends StatelessWidget {
 
 List<DropdownMenuItem<String>> get dropdownItems{
   List<DropdownMenuItem<String>> menuItems = [
-    const DropdownMenuItem(child: Text("1 занятие"),value: "1"),
-    const DropdownMenuItem(child: Text("2 занятие"),value: "2"),
+    DropdownMenuItem(child: Text("1 занятие"),value: "1"),
+    DropdownMenuItem(child: Text("2 занятие"),value: "2"),
   ];
   return menuItems;
 }
