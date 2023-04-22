@@ -22,23 +22,47 @@ class _MainDrawerState extends State<MainDrawer> {
         ),
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: Divider(
-                color: Colors.white,
-                height: 1,
-                thickness: 2,
-                indent: 5,
-                endIndent: 5,
+            SizedBox(
+              width: double.infinity,
+              height: 60,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white.withOpacity(0)
+                ),
+                onPressed: () {},
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Исходный учебный план",
+                    style:
+                    TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                ),
               ),
             ),
-            ListTile(
-              title: Text("Исходный учебный план",
-                  style: TextStyle(color: Colors.white, fontSize: 15)),
-            ),
-            ListTile(
-              title: Text("Календарно-тематический план",
-                  style: TextStyle(color: Colors.white, fontSize: 15)),
+            SizedBox(
+              width: double.infinity,
+              height: 60,
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  overlayColor: MaterialStateProperty.resolveWith<Color?>(
+                        (Set<MaterialState> states) {
+                      if (states.contains(MaterialState.pressed))
+                        return Colors.white.withOpacity(0); //<-- SEE HERE
+                      return Colors.white.withOpacity(0); // Defer to the widget's default.
+                    },
+                  ),
+                ),
+                onPressed: () {},
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Календарно-тематический план",
+                    style:
+                    TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                ),
+              ),
             ),
           ],
         ),

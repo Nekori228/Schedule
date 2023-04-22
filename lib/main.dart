@@ -16,23 +16,25 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.white,
         drawer: MainDrawer(),
         appBar: AppBar(
-          title: SizedBox(
-            width: 300,
-              child: DropdownButton()),
+          title: SizedBox(width: 300, child: DropdownButton()),
           toolbarHeight: 120,
           backgroundColor: Color(0xFF6F5DD9),
           actions: <Widget>[
             Padding(
               padding: const EdgeInsets.all(20),
-              child: IconButton(
-                onPressed: () {},
-                icon: Icon(
+              child: GestureDetector(
+                onTap: () {},
+                child: Icon(
                   Icons.add,
                   size: 40,
                 ),
               ),
             ),
-            IconButton(onPressed: () {}, icon: Icon(Icons.download, size: 40)),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: GestureDetector(
+                  onTap: () {}, child: Icon(Icons.download, size: 40)),
+            ),
           ],
         ),
       ),
