@@ -18,7 +18,10 @@ class appBarProject extends StatelessWidget with PreferredSizeWidget {
             color: const Color(0xFF6F5DD9),
           ),
           const Center(
-            child: Text("Календарно-тематический план"),
+            child: Text(
+              "Календарно-тематический план",
+              style: TextStyle(fontSize: 25, color: Colors.white),
+            ),
           ),
           Positioned.fill(
             child: Align(
@@ -26,6 +29,22 @@ class appBarProject extends StatelessWidget with PreferredSizeWidget {
               child: Row(
                 children: [
                   SizedBox(width: MediaQuery.of(context).size.width * 0.03),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      shape: CircleBorder(),
+                      padding: EdgeInsets.all(24),
+                    ),
+                    onPressed: () {
+                      Scaffold.of(context).openDrawer();
+                    },
+                    child: Icon(
+                      Icons.menu,
+                      size: 30,
+                      color: Color(0xFF23E091),
+                    ),
+                  ),
+                  SizedBox(width: 20),
                   SizedBox(
                     width: 300,
                     child: DropdownButtonFormField(
@@ -38,11 +57,13 @@ class appBarProject extends StatelessWidget with PreferredSizeWidget {
                             color: Color(0xFF23E091),
                           ),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.white, width: 2),
+                            borderSide:
+                                const BorderSide(color: Colors.white, width: 2),
                             borderRadius: BorderRadius.circular(20),
                           ),
                           border: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.white, width: 2),
+                            borderSide:
+                                const BorderSide(color: Colors.white, width: 2),
                             borderRadius: BorderRadius.circular(20),
                           ),
                           filled: true,
@@ -52,16 +73,24 @@ class appBarProject extends StatelessWidget with PreferredSizeWidget {
                         value: selectedValue,
                         onChanged: (String? newValue) {},
                         items: const [
-                          DropdownMenuItem(value: "1", child: Text("Численные методы")),
-                          DropdownMenuItem(value: "2", child: Text("Основы философии")),
+                          DropdownMenuItem(
+                              value: "1", child: Text("Численные методы")),
+                          DropdownMenuItem(
+                              value: "2", child: Text("Основы философии")),
                           DropdownMenuItem(value: "3", child: Text("УП.01")),
                           DropdownMenuItem(value: "4", child: Text("УП.04")),
-                          DropdownMenuItem(value: "5", child: Text("МДК 07.02")),
-                          DropdownMenuItem(value: "6", child: Text("МДК 02.02")),
-                          DropdownMenuItem(value: "7", child: Text("МДК 04.03")),
-                          DropdownMenuItem(value: "8", child: Text("МДК 03.03")),
-                          DropdownMenuItem(value: "9", child: Text("МДК 03.01")),
-                          DropdownMenuItem(value: "10", child: Text("МДК 02.01")),
+                          DropdownMenuItem(
+                              value: "5", child: Text("МДК 07.02")),
+                          DropdownMenuItem(
+                              value: "6", child: Text("МДК 02.02")),
+                          DropdownMenuItem(
+                              value: "7", child: Text("МДК 04.03")),
+                          DropdownMenuItem(
+                              value: "8", child: Text("МДК 03.03")),
+                          DropdownMenuItem(
+                              value: "9", child: Text("МДК 03.01")),
+                          DropdownMenuItem(
+                              value: "10", child: Text("МДК 02.01")),
                         ]),
                   )
                 ],
@@ -73,9 +102,17 @@ class appBarProject extends StatelessWidget with PreferredSizeWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                const Icon(Icons.add, color: Colors.white, size: 30,),
+                const Icon(
+                  Icons.add,
+                  color: Colors.white,
+                  size: 30,
+                ),
                 const SizedBox(width: 20),
-                SizedBox(width: 20, height: 20,child: Image.asset('assets/images/download.png'),),
+                SizedBox(
+                  width: 20,
+                  height: 20,
+                  child: Image.asset('assets/images/download.png'),
+                ),
                 SizedBox(width: MediaQuery.of(context).size.width * 0.03)
               ],
             ),
