@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MainDrawer extends StatefulWidget {
@@ -23,10 +22,10 @@ class _MainDrawerState extends State<MainDrawer> {
         child: Column(
           children: [
             DropdownButton(),
-            ListTile(
+            const ListTile(
               title: Text("Исходный учебный план"),
             ),
-            ListTile(
+            const ListTile(
               title: Text("ктп", style: TextStyle(color: Colors.white)) ,
             ),
           ],
@@ -52,16 +51,16 @@ class DropdownButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             DropdownButtonFormField(
-              hint: Text('1 занятие'),
+              hint: const Text('1 занятие'),
                 iconSize: 0.0,
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.arrow_drop_down_sharp, size: 40, color: Color(0xFF23E091),),
+                  prefixIcon: const Icon(Icons.arrow_drop_down_sharp, size: 40, color: Color(0xFF23E091),),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white, width: 2),
+                    borderSide: const BorderSide(color: Colors.white, width: 2),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white, width: 2),
+                    borderSide: const BorderSide(color: Colors.white, width: 2),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   filled: true,
@@ -82,8 +81,8 @@ class DropdownButton extends StatelessWidget {
 
 List<DropdownMenuItem<String>> get dropdownItems{
   List<DropdownMenuItem<String>> menuItems = [
-    DropdownMenuItem(child: Text("1 занятие"),value: "1"),
-    DropdownMenuItem(child: Text("2 занятие"),value: "2"),
+    const DropdownMenuItem(child: Text("1 занятие"),value: "1"),
+    const DropdownMenuItem(child: Text("2 занятие"),value: "2"),
   ];
   return menuItems;
 }
