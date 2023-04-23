@@ -29,6 +29,8 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   mysql1: ^0.20.0
+  shimmer_animation: ^2.1.0+1
+  data_table_2: ^2.4.2
   flutter:
     sdk: flutter
 
