@@ -24,15 +24,27 @@ class _MainDrawerState extends State<MainDrawer> {
         ),
         child: Column(
           children: [
-            Container(
-              decoration: BoxDecoration(
-                color: page == 0 ? Colors.transparent.withOpacity(0.2) : Colors.transparent,
-                borderRadius: BorderRadius.only(topRight: Radius.circular(50))
-              ),
-              padding: EdgeInsets.only(left: 20),
-              height: 100,
-              alignment: Alignment.centerLeft,
-              child: const Text("Учебный план", style: TextStyle(color: Colors.white, fontSize: 15)),
+            Stack(
+              children: [
+                Container(
+                  width: 5,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(topRight: Radius.circular(10), bottomRight: Radius.circular(10)),
+                    color: Colors.white
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      color: page == 0 ? Colors.transparent.withOpacity(0.2) : Colors.transparent,
+                      borderRadius: BorderRadius.only(topRight: Radius.circular(50))
+                  ),
+                  padding: EdgeInsets.only(left: 20),
+                  height: 100,
+                  alignment: Alignment.centerLeft,
+                  child: const Text("Учебный план", style: TextStyle(color: Colors.white, fontSize: 15)),
+                ),
+              ],
             ),
             Container(
               height: 100,
